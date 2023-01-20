@@ -1,0 +1,32 @@
+name: 'NodeJS Build and Test Composite Action'
+
+description: 'Common action to build and test the node packages'
+
+inputs:
+  node_version:
+    description: 'NodeJS version to use'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ inputs.node_version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node_version }}
+        cache: 'yarn'
+
+    - run: yarn install --immutable
+      shell: bash
+
+    - run: yarn lint
+      shell: bash
+
+    - run: yarn test
+      shell: bash
+
+    - run: yarn build
+      shell: bash

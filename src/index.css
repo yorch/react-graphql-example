@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  [data-theme='dataset'] {
+    --color-primary: #2c59eb;
+  }
+
+  [data-theme='singularity_xdr'] {
+    --color-primary: #7b3ff2;
+  }
+}
+
+:root {
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+}
+
+body {
+  @apply m-0 flex min-h-screen min-w-[320px] place-items-center bg-[#E9E9E9] font-lato text-base font-normal text-[#213547];
+}
+
+#root {
+  @apply flex min-h-screen grow p-10;
+}

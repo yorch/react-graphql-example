@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    ":automergeAll",
+    ":maintainLockFilesWeekly",
+    ":prHourlyLimitNone"
+  ],
+  "packageRules": [
+    {
+      "groupName": "TypeScript ESlint Packages",
+      "packagePatterns": ["^@typescript-eslint/"]
+    },
+    {
+      "groupName": "Testing Library Packages",
+      "packagePatterns": ["^@testing-library/"]
+    },
+    {
+      "groupName": "Vite Packages",
+      "packageNames": ["vite", "^vite-", "^@vitejs/", "vitest", "^@vitest/"]
+    },
+    {
+      "groupName": "ESLint Packages",
+      "packageNames": ["eslint", "^eslint-"]
+    }
+  ]
+}
