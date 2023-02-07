@@ -22,3 +22,17 @@ export const GET_COMPANIES = gql`
     }
   }
 `;
+
+export const ADD_USER = gql`
+  mutation addUser($firstName: String!, $lastName: String!, $companyId: ID!) {
+    addUser(user: { firstName: $firstName, lastName: $lastName, companyId: $companyId }) {
+      id
+      firstName
+      lastName
+      company {
+        id
+        name
+      }
+    }
+  }
+`;

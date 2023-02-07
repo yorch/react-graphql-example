@@ -3,6 +3,7 @@ import type { ReactElement } from 'react';
 import Head from 'components/Head';
 import Users from 'components/Users';
 import UsersWithHooks from 'components/UsersWithHooks';
+import AddUser from 'components/AddUser';
 
 export default function App(): ReactElement {
   return (
@@ -14,6 +15,7 @@ export default function App(): ReactElement {
           <div className='flex grow flex-row'>
             <Users />
             <UsersWithHooks />
+            <AddUser />
           </div>
         </div>
       </div>
