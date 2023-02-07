@@ -36,3 +36,7 @@ coverage
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# GraphQL Codegen
+src/generated/
+graphql.schema.json
