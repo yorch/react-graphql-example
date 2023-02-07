@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import type { ReactElement } from 'react';
 import { GET_USERS } from 'queries';
-import Loading from 'Loading';
+import Loading from 'components/Loading';
 
 interface Company {
   id: string;
@@ -28,6 +28,8 @@ export default function Users(): ReactElement {
 
   return (
     <div>
+      <h1 className='text-lg font-semibold'>Title</h1>
+
       <table>
         <thead>
           <tr>
