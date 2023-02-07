@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers, @typescript-eslint/explicit-function-return-type */
 import type { ReactElement } from 'react';
 import Head from 'components/Head';
-import { LogoSentinelOne, LogoSingularityXdr } from 'logos';
+import Users from 'Users';
 
 export default function App(): ReactElement {
   return (
@@ -9,19 +9,11 @@ export default function App(): ReactElement {
       <Head title='Main' />
 
       <div className='flex grow flex-col rounded border border-slate-300 bg-white p-1'>
-        <div className='w-auto p-4'>
-          <LogoSingularityXdr />
-        </div>
-
         <div className='flex h-full items-center p-8'>
-          <div className='-mt-20 flex grow flex-col items-center text-center'>
-            <div className='p-5'>
-              <LogoSentinelOne />
-            </div>
-
+          <div className='-mt-20 flex grow flex-col'>
             <h1 className='text-lg font-semibold'>Title</h1>
 
-            <p className='text-sm text-gray-600'>Subtitle</p>
+            <Users />
           </div>
         </div>
       </div>
