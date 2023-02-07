@@ -1,22 +1,9 @@
-import { useQuery } from '@apollo/client';
 import type { ReactElement } from 'react';
-import { GET_USERS } from 'queries';
 import Loading from 'components/Loading';
+import { useGetUsersQuery } from 'generated/types-and-hooks';
 
-interface Company {
-  id: string;
-  name: string;
-}
-
-interface User {
-  id: string;
-  firstName: string;
-  lastName: string;
-  company: Company;
-}
-
-export default function Users(): ReactElement {
-  const { loading, error, data } = useQuery<{ users: User[] }>(GET_USERS);
+export default function UsersWithHooks(): ReactElement {
+  const { loading, error, data } = useGetUsersQuery();
 
   if (loading) {
     return <Loading />;
@@ -28,7 +15,7 @@ export default function Users(): ReactElement {
 
   return (
     <div className='m-2'>
-      <h1 className='mb-1 text-lg font-semibold'>Users</h1>
+      <h1 className='mb-1 text-lg font-semibold'>Users with Hooks</h1>
 
       <table className='border-separate border border-slate-400'>
         <thead>
