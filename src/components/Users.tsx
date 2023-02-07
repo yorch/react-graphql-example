@@ -15,8 +15,12 @@ interface User {
   company: Company;
 }
 
+const POLL_INTERVAL = 1000;
+
 export default function Users(): ReactElement {
-  const { loading, error, data } = useQuery<{ users: User[] }>(GET_USERS);
+  const { loading, error, data } = useQuery<{ users: User[] }>(GET_USERS, {
+    pollInterval: POLL_INTERVAL,
+  });
 
   if (loading) {
     return <Loading />;

@@ -2,8 +2,10 @@ import type { ReactElement } from 'react';
 import Loading from 'components/Loading';
 import { useGetUsersQuery } from 'generated/types-and-hooks';
 
+const POLL_INTERVAL = 1000;
+
 export default function UsersWithHooks(): ReactElement {
-  const { loading, error, data } = useGetUsersQuery();
+  const { loading, error, data: userData } = useGetUsersQuery({ pollInterval: POLL_INTERVAL });
 
   if (loading) {
     return <Loading />;
@@ -27,7 +29,7 @@ export default function UsersWithHooks(): ReactElement {
         </thead>
 
         <tbody>
-          {data?.users.map((user) => (
+          {userData?.users.map((user) => (
             <tr key={user.id}>
               <td className='border border-slate-200 p-1'>{user.id}</td>
               <td className='border border-slate-200 p-1'>
